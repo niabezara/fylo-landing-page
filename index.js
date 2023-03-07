@@ -1,31 +1,33 @@
-const email = document.getElementsByClassName("enter-mail");
-const email2 = document.getElementsByClassName("enter-email2");
-const error = document.getElementsByClassName("error-function");
-const error2 = document.getElementsByClassName("error-function2");
-const button = document.getElementsByClassName("btn-1");
-const button2 = document.getElementsByClassName("btn-2");
+// first button
+const email = document.querySelector(".enter-mail");
+const error = document.querySelector(".error-function");
+const button = document.querySelector(".btn-1");
 
-let emailRegex =
+// second button
+const error2 = document.querySelector(".error-function2");
+const email2 = document.querySelector(".enter-mail2");
+const button2 = document.querySelector(".btn-2");
+
+let mailRegex =
   /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)$/;
 
-function textmail(input) {
-  if (emailRegex.test(input.value)) {
-    console.log("This is true");
-    input.classList.remove("visible");
-  } else if (!emailRegex.test(input.value)) {
-    console.log(error[0]);
-    error[0].classList.add("visible");
+function testmail(input, error) {
+  const isValid = mailRegex.test(input.value);
+  if (isValid) {
+    error.classList.remove("visible");
+  } else {
+    error.classList.add("visible");
   }
 }
 
-button[0].addEventListener("click", (event) => {
+button.addEventListener("click", (event) => {
   event.preventDefault();
-  textmail(error[0]);
+  testmail(email, error);
   console.log("clicked");
 });
 
-button2[0].addEventListener("click", (event) => {
+button2.addEventListener("click", (event) => {
   event.preventDefault();
-  secondmail(email2[0]);
+  testmail(email2, error2);
   console.log("clicked");
 });

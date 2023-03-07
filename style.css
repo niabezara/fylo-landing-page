@@ -199,11 +199,13 @@ textarea {
   transition: 0.3s;
 }
 /* hovers ver vaketeb ======== */
-.main-info:hover .rect .fylo-svg .fylo-work {
-  background-color: #71dfcc;
-  color: #71dfcc;
-  fill: #71dfcc;
+.main-info :hover .fylo-svg {
+  stroke: #71dfcc;
   cursor: pointer;
+}
+
+.main-info:hover .fylo-work {
+  color: #71dfcc;
 }
 
 .rect {
@@ -301,6 +303,11 @@ textarea {
   margin-bottom: 3.2rem;
   color: #ffffff;
 }
+.email-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .enter-mail2,
 textarea {
   background: #ffffff;
@@ -308,7 +315,7 @@ textarea {
   border: none;
   border-radius: 1.47059px;
   height: 4rem;
-  width: 80%;
+  width: 100%;
 }
 
 ::placeholder {
@@ -334,7 +341,7 @@ textarea {
   font-family: var(--Raleway);
   height: 4rem;
   border: none;
-  width: 80%;
+  width: 100%;
   margin-top: 0.8rem;
   transition: 0.3s;
 }
@@ -440,6 +447,8 @@ li :is(.phone, .example) {
   line-height: 16px;
   letter-spacing: 0.4px;
   color: #ffffff;
+  display: flex;
+  margin: 0;
 }
 
 .visible {
@@ -578,6 +587,7 @@ li :is(.phone, .example) {
   .email-section {
     display: flex;
     flex-direction: column;
+    align-items: unset;
   }
   .sign-up-info :is(h1, p) {
     text-align: left;
